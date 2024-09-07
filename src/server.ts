@@ -1,8 +1,7 @@
 import express from 'express';
-import { Client } from 'pg';
 import dotenv from 'dotenv';
-import logger from 'utils/logger'; // Ensure this path is correct
-import { database } from './database/index';
+import logger from '@utils/logger';
+import { database } from '@/database/index';
 
 dotenv.config();
 

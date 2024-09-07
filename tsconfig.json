@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src", 
+    "paths": {
+      "@/*": ["./*"],
+      "@src/*": ["./*"],
+      "@utils/*": ["utils/*"]
+    },
     "target": "ES6",
     "module": "commonjs",
     "rootDir": "./src",
     "outDir": "./dist",
-    "baseUrl": "./src", // Set base URL for absolute imports
-    "paths": {
-      "*": ["*"] // Maps all module paths to the base URL
-    },
     "esModuleInterop": true,
     "strict": true,
     "skipLibCheck": true
