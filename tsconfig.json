@@ -4,7 +4,9 @@
     "paths": {
       "@/*": ["./*"],
       "@src/*": ["./*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
+      "@database/*": ["database/*"]
+
     },
     "target": "ES6",
     "module": "commonjs",
