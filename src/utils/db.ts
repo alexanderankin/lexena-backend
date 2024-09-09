@@ -38,7 +38,6 @@ export class Database {
     const keys = Object.keys(data).join(', ');
     const values = Object.values(data);
     const placeholders = values.map((_, i) => `$${i + 1}`).join(', ');
-
     const query = `INSERT INTO ${tableName} (${keys}) VALUES (${placeholders}) RETURNING *`;
 
     return (await this.query<T>({ text: query, values })).rows[0];
@@ -71,5 +70,12 @@ export class Database {
     const query = `DELETE FROM ${tableName} WHERE ${whereClause}`;
 
     await this.query({ text: query, values });
+  }
+
+  public async selectAll<T extends QueryResultRow>(tableName: string, ): Promise<T[]> {
+    
+    const query = `SELECT * FROM ${tableName}`;
+
+    return (await this.query<T>({ text: query })).rows;
   }
 }

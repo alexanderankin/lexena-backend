@@ -1,8 +1,8 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import logger from '@utils/logger';
-import { database } from '@/database/index';
-
+import { readdirSync } from 'fs';
+import router from './routes/users';
 dotenv.config();
 
 const app = express();
@@ -11,6 +11,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
+app.use(router)
 app.get('/', (req, res) => {
   logger.info('Hello world route accessed');
   res.send('Hello, World!');
