@@ -26,4 +26,8 @@ export class UserController {
     await this.userService.deleteUser(req, res);
 
   }
+  public async login (req:Request,res:Response){
+    
+    await this.userService.loginUser(req,res)
+  }
 }

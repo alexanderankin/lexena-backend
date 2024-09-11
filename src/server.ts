@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 // database();
 
 app.use(express.json());
-
+console.log(process.env.JWT_SECRET)
 app.use(router)
 app.get('/', (req, res) => {
   logger.info('Hello world route accessed');
